@@ -1,0 +1,43 @@
+﻿@model MvcLaundryCrudProject.Models.Services
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            Kategori Adı
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categories.CategoryName)
+        </dd>
+
+        <dt>
+            Müşteri Ad Soyad
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customers.NameSurname)
+        </dd>
+        <dt>
+            Hizmet Tarihi
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-default" /> |
+            @Html.ActionLink("Geri Dön", "Index")
+        </div>
+    }
+</div>
